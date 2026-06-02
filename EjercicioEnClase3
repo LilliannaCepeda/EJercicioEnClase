@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class Main{
+
+    public static void validarEstudiante(String nombre, int edad, double indice)
+            throws Exception {
+
+        if (nombre.trim().isEmpty()) {
+            throw new Exception("Error: El nombre no puede estar vacío.");
+        }
+
+        if (edad < 18 || edad > 100) {
+            throw new Exception(
+                "Error: La edad debe estar entre 18 y 100 años."
+            );
+        }
+
+        if (indice < 0 || indice > 4) {
+            throw new Exception(
+                "Error: El índice debe estar entre 0 y 4."
+            );
+        }
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Nombre: ");
+        String nombre = sc.nextLine();
+
+        System.out.print("Edad: ");
+        int edad = sc.nextInt();
+
+        System.out.print("Índice académico: ");
+        double indice = sc.nextDouble();
+
+        try {
+
+            validarEstudiante(nombre, edad, indice);
+
+            System.out.println(
+                "Estudiante registrado correctamente."
+            );
+
+        } catch (Exception e) {
+
+            System.out.println(e.getMessage());
+
+        } finally {
+
+            System.out.println("Proceso finalizado.");
+
+            sc.close();
+        }
+    }
+    
+}
