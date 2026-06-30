@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/25"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.PrincipalController"
+      spacing="15"
+      alignment="TOP_LEFT">
+
+    <Label
+        text = "Conversor de monedas"
+        styleClass = "titulo"/>  
+    <TextField
+            fx:id="txtMontoDOP"
+            promptText="Ingrese el monto en DOP"/>
+    <ComboBox
+            fx:id = "MonedaDestinoComboBox"
+            promptText="Seleccione a la moneda que quiere convertir"/>
+    <HBox spacing="10"
+          alignment="CENTER">
+        <Button
+                text="Convertir"
+                onAction="#convertir"
+                onMouseEntered="#mostrarAyuda"
+                onMouseExited="#ocultarAyuda"/>
+        <Button
+                text = "Limpiar"
+                onAction = "#limpiar"/>
+    </HBox>
+    <Label
+        fx:id="lblResultado"
+        text="Resultado:"/>
+    <Label
+        fx:id="lblMensaje"
+        text="Esperando informacion..."/>
+</VBox>
+    
+    
